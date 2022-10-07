@@ -1,0 +1,86 @@
+<html>  	
+	<head>  
+		<meta charset="utf-8" />  	
+		<link rel="stylesheet" type="text/css" href="mainStyle.css"/>		
+		<script src="https://unpkg.com/pdf-lib@1.4.0 "></script>  
+		<script src="https://unpkg.com/downloadjs@1.4.7 "></script>		
+	</head> 
+	
+	<body> 			
+		<div id="wrapper">  
+			<header>		
+			</header>
+					
+			<aside>
+				<div>	
+					<h1>Редактор PDF-файлов</h1>				
+					<img class="headImage" src="headImage.png">
+					
+					<div class="ras"> 
+						<button onclick="addPage()">Добавить страницу</button>  
+					</div>
+					<div class="ras">
+						<button onclick="removePage()">Удалить страницу</button>
+						<div>
+							<p>Номер страницы:</p>
+							<input type="text" id="pageDel" value="1">
+						</div>
+					</div>
+					<div class="ras">
+						<button onclick="joinDocs()">Объединить все документы</button>
+					</div>
+			
+					<div class="ras">			
+						<button onclick="separateDoc()">Разделить документ</button>	
+						<p>Интервалы:</p>
+						<div>
+							<p>от</p>
+							<input type="text" id="intervalBegin" value="1">
+							<p>до</p>
+							<input type="text" id="intervalEnd" value="2">
+						</div>
+					</div>
+					<div class="ras">
+						<button onclick="addNumbers()">Добавить нумерацию страниц</button>
+						<div>
+							<p>Первая страница:</p>
+							<input type="text" id="pageBegin" value="1">
+						</div>
+						<div>
+							<p>Начать с:</p>
+							<input type="text" id="indexBegin" value="1">
+						</div>
+					</div>
+					<div class="ras">					
+						<button onclick="addPicture()">Вставить изображение</button>
+						<div>
+							<p>Номер страницы:</p>
+							<input type="text" id="pageInsertImg" value="1">
+						</div>
+						<input class="addImage" id="addImage" type="file" accept=".jpg">
+					</div>
+					<div class="ras">
+						<button onclick="saveDoc()">Скачать файл</button>		
+					</div>
+					<div class="debug">
+						<label id="lbl" style="width: 5; height: 12;">0</label>
+					</div>
+				</div>
+			</aside>
+			
+			<div class="workBlock">
+				<div class="dropZone">  
+					<div>Чтобы добавить pdf-файл нажмите или перетащиете его сюда</div>
+					<input class="addFile" type="file" id="file" accept=".pdf">
+				</div>			
+				<div class="list_elem">
+					<ol id="list_input">
+				</div>
+				<div class="workZone">
+					<iframe class="pdf" id="pdf"></iframe>
+				</div>
+			</div>			
+		</div>				
+		<script type="text/javascript" src="mainScript.js" language="JavaScript"></script>		
+	</body> 
+</html>
